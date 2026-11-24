@@ -1,0 +1,11 @@
+<resources>
+    <color name="yt_bg">#0F0F0F</color>
+    <color name="yt_sidebar">#161616</color>
+    <color name="yt_card_bg">#181818</color>
+    <color name="yt_red">#FF0033</color>
+    <color name="yt_white">#F1F1F1</color>
+    <color name="yt_muted">#AAAAAA</color>
+    <color name="yt_chip_bg">#272727</color>
+    <color name="yt_chip_active">#F1F1F1</color>
+    <color name="yt_duration_bg">#CC000000</color>
+</resources>

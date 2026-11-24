@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yt_bg"
+    android:orientation="vertical">
+
+    <!-- CHANNEL PROFILE HEADER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#161616"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="24dp"
+        android:paddingTop="14dp"
+        android:paddingEnd="24dp"
+        android:paddingBottom="14dp">
+
+        <Button
+            android:id="@+id/btnChannelBack"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:backgroundTint="#2B2B2B"
+            android:focusable="true"
+            android:text="← Volver"
+            android:textAllCaps="false"
+            android:textColor="@color/yt_white"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvChannelAvatar"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/bg_avatar_circle"
+            android:gravity="center"
+            android:text="C"
+            android:textColor="@color/yt_white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvChannelName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Canal"
+                android:textColor="@color/yt_white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvChannelMeta"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Videos filtrados anti-Shorts y anti-brainrot"
+                android:textColor="@color/yt_muted"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <!-- SUBSCRIBE BUTTON: STRICTLY GONE WHEN lockSubscriptions == true -->
+        <Button
+            android:id="@+id/btnChannelSubscribe"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:layout_marginEnd="10dp"
+            android:backgroundTint="@color/yt_red"
+            android:focusable="false"
+            android:paddingStart="18dp"
+            android:paddingEnd="18dp"
+            android:text="Suscribirse"
+            android:textAllCaps="false"
+            android:textColor="@color/yt_white"
+            android:textStyle="bold"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/btnChannelParentalPin"
+            android:layout_width="wrap_content"
+            android:layout_height="42dp"
+            android:backgroundTint="#2B2B2B"
+            android:focusable="true"
+            android:text="🔒 Canal (PIN)"
+            android:textAllCaps="false"
+            android:textColor="@color/yt_white"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <!-- FILTERED VIDEOS GRID -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="18dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvChannelVideos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:paddingBottom="24dp" />
+
+        <LinearLayout
+            android:id="@+id/channelLoadingContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:indeterminateTint="@color/yt_red" />
+
+            <TextView
+                android:id="@+id/tvChannelLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Cargando y filtrando videos del canal..."
+                android:textColor="@color/yt_muted"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </FrameLayout>
+
+</LinearLayout>
